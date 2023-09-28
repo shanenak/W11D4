@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_205059) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_moves_on_name", unique: true
   end
 
   create_table "poke_moves", force: :cascade do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_28_205059) do
     t.bigint "move_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["move_id"], name: "index_poke_moves_on_move_id"
     t.index ["pokemon_id", "move_id"], name: "index_poke_moves_on_pokemon_id_and_move_id", unique: true
   end
 
