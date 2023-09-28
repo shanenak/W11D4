@@ -13,8 +13,8 @@
 #
 class Item < ApplicationRecord
 
-    validates :name, length: {less_than: 255}
-    validates :price, length: {greater_than_or_equal_to: 0}
+    validates :name, length: {maximum: 255}
+    validates :price, length: {minimum: 0}
 
     validates :pokemon_id, :happiness, :image_url, presence: true
 

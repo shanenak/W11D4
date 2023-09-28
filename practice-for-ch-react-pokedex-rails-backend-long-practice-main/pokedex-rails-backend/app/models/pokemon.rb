@@ -17,7 +17,7 @@ class Pokemon < ApplicationRecord
 
     validates :image_url, presence: true
 
-    validates :captured, inclusion: [true, false]
+    validates :captured, inclusion: {in: [true, false], message: "has to be true or false"}
 
     validates :name, length: { in: 3..255 }, uniqueness: { message: "'%{value}' is already in use" }
     validates :number, uniqueness: { message: "'%{value}' is already in use" }
